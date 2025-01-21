@@ -1,1 +1,4 @@
 **/*.npy
+**/*.keras
+**/*checkpoint.ipynb
+**/*gitignore-checkpoint

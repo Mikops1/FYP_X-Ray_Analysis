@@ -1,0 +1,28 @@
+Foundation_Nih_1  -  First model success X
+Foundation_Nih_2  -  Changing from binary_accuracy to accuracy X
+Foundation_Nih_3  -  Increase number of epochs to 50 X
+Foundation_Nih_4  -  Revert to binary_accuracy, using different data composition X - Issues identified in data composition fixed in 5
+Foundation_Nih_5  -  Addressing data issues
+Foundation_Nih_6  -  Increase number of epochs to 50
+Foundation_Nih_7  -  15 Epochs, Batch size fo 8 - Remove GPU Config
+Foundation_Nih_8  -  Switch to Adam Optimiser
+Foundation_Nih_9  -  Revert to relu
+Foundation_Nih_10  - Try higher LR
+Foundation_Nih_11  - Using F1 metrics - Success confusion matrix more suitable accuracy 30-40   test_acc = 0.32
+Foundation_Nih_12  - Increase Epochs to 75
+Foundation_Nih_13  - Decrease epochs to 25    -  test_acc = 0.32
+Foundation_Nih_14  - Add batch normalisation layers 0.32, 0.5 Dropout = val_fin of ~0.25
+Foundation_Nih_15  - Adam optimiser, 40 epochs, LR 0.002, 0.3 Dropout = val_fin of ~0.15
+Foundation_Nih_15  -  sgd optimiser, 15 epochs, LR 0.001, 0.3 dropout, CategoricalFocalCrossentropy(gamma=2.0, alpha=normalized_alpha), 
+Foundation_Nih_16  - Fixing alpha values to array, increase epochs to 25
+Foundation_Nih_17  - Fixing alpha values to list, epochs = 30
+Foundation_Nih_18  -  75 epochs, f1score micro = validation_acc of 40 at 55 epochs
+Foundation_Nih_19  -  50 epochs binary_accuracy
+Foundation_Nih_20  -  75 Epochs    ----- val_acc = ~0.8 confusion matrix poor  
+Foundation_Nih_21  -  F1 Average weighted, 60 Epochs = val_fin of ~0.37
+Foundation_Nih_21  -  Add 1024 dense layer, First two dense dropout of 40%  =  val_acc ~0.3
+Foundation_Nih_22  -  FBetaScore(average='macro', beta=2.0)])
+Foundation_Nih_23  -  All dropout 0.5 = disaster
+Foundation_Nih_24  -  All dropout 0.3
+Foundation_Nih_25  - Revert to approx NIH13 - 
+Foundation_Nih_16  - 

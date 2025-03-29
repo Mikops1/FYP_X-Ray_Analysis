@@ -1,0 +1,41 @@
+NIH_Class_0_1 = model.compile(loss='binary_crossentropy', metrics=['accuracy'], optimizer='adam') using sigmoid   =   failure all predictions neg
+
+NIH_Class_0_2 = model.compile(optimizer='sgd', 
+                  loss=CategoricalFocalCrossentropy(gamma=2.0, alpha=alpha_list), 
+                  metrics=[FBetaScore(average='macro', beta=2.0)])                = failure all prediction neg, loss wrong
+
+NIH_Class_0_3 = BinaryFocalCrossentropy                         = failure, same as above
+
+NIH_Class_0_4  =   Reset to trial model  -  model.add(Dense(units=2, activation="softmax"))
+                                            model.compile(loss='categorical_crossentropy', metrics=['accuracy'], optimizer='adam')
+
+                                                                = failure loss : nan, val_acc static
+
+NIH_Class_0_5  =  sigmoid and BinaryFocalCrossentropy      =  promising, varied matrix . test_acc = ~0.5  loss extr. high
+
+NIH_Class_0_6 = hard_sigmoid and binary_accuracy     =   Terrible all negative
+
+NIH_Class_0_7 = Change binary_accuracy to accuracy    =   Terrible all negative   flat val_accuracy: 0.7385
+
+NIH_Class_0_8 = Use values from 05, 75 epochs       =     terrible all neg, loss extr. high
+
+ 
+VGG-19Test1fin  =  74% test good matrix
+
+VGG-19Test2fin   = 70%  reduce_lr rate 0.8 rather than 0.2, no normalisation
+
+VGG-19Test2fin   =  lr back to 0.2   Excellent matrix , 77% test_acc
+
+NIH_Class_0_9  =  Adding weights and ReduceLRonPlateau
+
+VGG-19Test3fin  =  Remove additional dense layer 1024 = Poor matrix, accuracy gain too fast
+
+VGG-19Test4fin  =  Add 4096 dense with 0.5 dropout
+
+VGG-19Test5fin  =  Maual weight adjustment    -    positive_class_weight = 2.0  # Adjust this value as needed      =   72% substantial prediction in positive predictions 
+                                                    class_weights[1] = class_weights[1] * positive_class_weight
+
+VGG-19Test6fin  =  Decrease weight factor to 1.3    == Minor difference, ineffective
+
+VGG-19Test7fin  =   More dense layers and unlocking mor layers for training from base model, remove manual weight adjustment  ==  no major difference
+
